@@ -51,6 +51,19 @@ System::~System() {
         delete site;
 }
 
+void System::clear()
+{
+    for (auto force : forces)
+        delete force;
+    for (auto site : virtualSites)
+        delete site;
+
+    masses.clear();
+    constraints.clear();
+    forces.clear();
+    virtualSites.clear();
+}
+
 double System::getParticleMass(int index) const {
     ASSERT_VALID_INDEX(index, masses);
     return masses[index];

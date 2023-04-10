@@ -70,6 +70,9 @@ public:
      */
     System();
     ~System();
+    
+    void clear();
+
     /**
      * Get the number of particles in this System.
      */
@@ -244,6 +247,7 @@ public:
      * @return true if at least one force uses PBC and false otherwise
      */
     bool usesPeriodicBoundaryConditions() const;
+
 private:
     class ConstraintInfo;
     Vec3 periodicBoxVectors[3];
